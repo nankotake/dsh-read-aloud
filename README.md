@@ -4,8 +4,8 @@
 
 Read AI conversation content aloud in the DeepSeek Harness Web GUI. It ships with the browser's built-in speech synthesis as the default backend, plus an example host backend, and leaves a small, documented seam for wiring in your own TTS. It contributes two controls through the official slot system:
 
-- A **per-message read button** in the assistant reply's action strip (between copy and branch), toggling between read / stop for that one reply.
-- A **session-header "Read conversation" button** that reads every user message and each turn's final assistant reply in order, toggling to "Stop reading" while playing.
+- A **per-message read button** in the assistant reply's action strip (between copy and branch), with **play / pause / resume / stop** states for that one reply.
+- A **session-header "Read conversation" button** that reads every user message and each turn's final assistant reply in order, also with **pause / resume / stop** controls.
 - A **"Read-aloud settings" card in Settings › Plugins** for the speech backend, rate, and voice.
 
 What is spoken is exactly what is on screen: text is derived from the same conversation snapshot the chat view renders from, so streaming partials, tool rows, and intermediate steps are skipped and a multi-step turn is read once as its final answer. Markdown markup is stripped before speaking — headings, bold/italic, links, list markers, and code-fence symbols are removed with the renderer's own GFM parser, so TTS reads the words, not the symbols (`**加粗**` → “加粗”, `[label](url)` → “label”). Long replies are split at sentence boundaries into chunks of at most 4000 characters and each chunk is synthesized and played in turn, so cloud TTS request-size limits (OpenAI tts-1 ≈ 4096 chars, ElevenLabs ≈ 5000) never cause a whole reply to fail.
@@ -37,8 +37,8 @@ Then refresh the browser page. The package ships a `dsh.bundle` manifest, so ins
 
 ## Usage
 
-- Hover an assistant reply and click the speaker/play button to read that reply; click it again (it becomes a stop button) to stop.
-- Click the **"Read conversation"** button in the session header to read the whole conversation from the top; click **"Stop reading"** to stop.
+- Hover an assistant reply and click the speaker/play button to read that reply. While it is reading the button becomes **pause** (click to pause; it turns back into **resume**), and a **stop** button appears beside it to cancel from the start.
+- Click the **"Read conversation"** button in the session header to read the whole conversation from the top; the same **pause / resume / stop** controls apply while it is playing.
 - Open **Settings › Plugins › Read-aloud settings** to pick the speech backend and configure its rate and voice.
 
 ## Settings
