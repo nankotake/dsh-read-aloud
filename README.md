@@ -2,6 +2,8 @@
 
 [![topic: dsh-plugin](https://img.shields.io/badge/topic-dsh--plugin-blue)](https://github.com/topics/dsh-plugin)
 
+English | [中文](README.zh.md)
+
 Read AI conversation content aloud in the DeepSeek Harness Web GUI. It ships with the browser's built-in speech synthesis as the default backend, plus an example host backend, and leaves a small, documented seam for wiring in your own TTS. It contributes two controls through the official slot system:
 
 - A **per-message read button** in the assistant reply's action strip (between copy and branch), with **play / pause / resume / stop** states for that one reply.
