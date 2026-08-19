@@ -8,7 +8,7 @@ Read AI conversation content aloud in the DeepSeek Harness Web GUI. It ships wit
 - A **session-header "Read conversation" button** that reads every user message and each turn's final assistant reply in order, toggling to "Stop reading" while playing.
 - A **"Read-aloud settings" card in Settings › Plugins** for the speech backend, rate, and voice.
 
-What is spoken is exactly what is on screen: text is derived from the same conversation snapshot the chat view renders from, so streaming partials, tool rows, and intermediate steps are skipped and a multi-step turn is read once as its final answer.
+What is spoken is exactly what is on screen: text is derived from the same conversation snapshot the chat view renders from, so streaming partials, tool rows, and intermediate steps are skipped and a multi-step turn is read once as its final answer. Markdown markup is stripped before speaking — headings, bold/italic, links, list markers, and code-fence symbols are removed with the renderer's own GFM parser, so TTS reads the words, not the symbols (`**加粗**` → “加粗”, `[label](url)` → “label”).
 
 ## Speech backends
 
