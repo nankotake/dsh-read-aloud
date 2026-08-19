@@ -16,7 +16,7 @@
   "main": "lib/index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/buffruan/dsh-read-aloud.git"
+    "url": "git+https://github.com/nankotake/dsh-read-aloud.git"
   },
   "exports": {
     ".": "./lib/index.js",

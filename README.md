@@ -20,7 +20,7 @@ dsh plugin --profile web add dsh-read-aloud
 Or from GitHub:
 
 ```sh
-dsh plugin --profile web add github:buffruan/dsh-read-aloud
+dsh plugin --profile web add github:nankotake/dsh-read-aloud
 ```
 
 Then refresh the browser page. The package ships a `dsh.bundle` manifest, so installation activates it automatically.
